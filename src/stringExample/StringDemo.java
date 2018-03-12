@@ -13,6 +13,7 @@ public class StringDemo {
 //        System.out.println(stringBufferArrayToString());
         stringAndStringBuffer();
 //        bubilingSort();
+        iphone();
     }
 
     /**
@@ -98,6 +99,10 @@ public class StringDemo {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+    }
+    private static void iphone(){
+        String str="13049337194";
+        System.out.println(str.replace(str.substring(3,7),"****"));
     }
 }
 
