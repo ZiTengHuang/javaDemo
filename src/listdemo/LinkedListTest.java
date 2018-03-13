@@ -1,5 +1,7 @@
 package listdemo;
 
+import java.util.Iterator;
+
 /**
  * @Author:MyHzt
  * @ClassName: LinkedList
@@ -9,5 +11,9 @@ package listdemo;
  * @Date:Created in 21:52 2017/11/22 0022
  */
 public class LinkedListTest {
+    public static void main(String[] args) {
+
+    }
+
 
 }
