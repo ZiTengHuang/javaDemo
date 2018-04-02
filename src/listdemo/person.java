@@ -6,7 +6,7 @@ package listdemo;
  * @ClassUse:
  * @Modified: no
  */
-public class person {
+public class person implements Comparable<person>{
 
     private String name;
     private int age;
@@ -45,10 +45,32 @@ public class person {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
         person person = (person) o;
 
-        return this.name.equals(person.name) && this.age == person.age;
+        if (age != person.age) return false;
+        return name.equals(person.name);
     }
 
+    /**
+     * why 31这个数 。
+     * 31是一个质数  质数是一个能被1和自己本身整除的数
+     * 2  这个数不大也不小
+     * 3 31这个数好算，2的5次方-1 ， 2向左移动5位
+     *
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
 
+    @Override
+    public int compareTo(person o) {
+        return 0;
+    }
 }

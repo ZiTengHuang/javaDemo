@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @Author:MyHzt
- * @ClassName:   删除Arraylist中重复的元素
+ * @ClassName: 删除Arraylist中重复的元素
  * @Date:Created in 22:17 2017/11/22 0022
  */
 public class ArrayListTest {
@@ -26,8 +26,9 @@ public class ArrayListTest {
         list1.add("b");
         list1.add("b");
         System.out.println(clearRepetition(list1));
-        newlist.remove(new person("黄三",1));
+        newlist.remove(new person("黄三", 1));
         System.out.println(newlist);
+        arrayListAndArrayList();
     }
 
     //清除list集合中重复的对象
@@ -58,4 +59,25 @@ public class ArrayListTest {
         return arrayList;
     }
 
+    private static void arrayListAndArrayList() {
+        ArrayList<ArrayList<person>> list = new ArrayList<>();
+        ArrayList<person> personArrayList = new ArrayList<>();
+        personArrayList.add(new person("33", 1));
+        personArrayList.add(new person("34", 1));
+        personArrayList.add(new person("35", 1));
+        personArrayList.add(new person("36", 1));
+        list.add(personArrayList);
+        ArrayList<person> personArrayList2 = new ArrayList<>();
+        personArrayList.add(new person("38", 1));
+        personArrayList.add(new person("34", 1));
+        personArrayList.add(new person("35", 1));
+        personArrayList.add(new person("36", 1));
+        list.add(personArrayList2);
+
+        for (ArrayList<person> a : list) {
+            for (person p : a) {
+                System.out.println(p.getName() + p.getAge());
+            }
+        }
+    }
 }
