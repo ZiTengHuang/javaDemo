@@ -16,7 +16,15 @@ public class hashMapExample {
         map.put("赵六", 26);
         map.put("牛七", 27);
 //        basicExample(map);
-        MapIteratorExample(map);
+        //    MapIteratorExample()
+//        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+//        for (Map.Entry<String, Integer> map1 : entries) {
+//            System.out.println(map1.getKey());
+//            System.out.println(map1.getValue());
+//        }
+        for (String key : map.keySet()) {
+            System.out.println(key + "="+map.get(key));
+        }
     }
 
     private static void MapIteratorExample(Map<String, Integer> map) {
@@ -30,6 +38,7 @@ public class hashMapExample {
         }
 
     }
+
     private static void basicExample(Map<String, Integer> map) {
         Integer i5 = map.put("李四", 25);
         System.out.println(map);
@@ -42,4 +51,5 @@ public class hashMapExample {
         System.out.println(c);
         //獲取MAP的值
     }
+
 }
